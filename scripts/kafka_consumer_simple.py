@@ -17,4 +17,4 @@ for i, message in enumerate(consumer):
     if i >= 4:
         break
 
-print("✅ Consumer test complete!")
+print("Consumer test complete!")
