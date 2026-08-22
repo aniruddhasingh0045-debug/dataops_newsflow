@@ -3,8 +3,7 @@ from datetime import datetime
 import subprocess
 import pandas as pd
 import os
-from kafka import KafkaProducer
-from kafka import KafkaConsumer
+from kafka import KafkaProducer, KafkaConsumer
 import json
 import psycopg2
 
@@ -87,7 +86,7 @@ def newsflow_pipeline():
                 ))
                 conn.commit()
                 count += 1
-                if count >= 5:  # Read only 5 messages then stop
+                if count >= 5:
                     break
             except Exception as e:
                 conn.rollback()
